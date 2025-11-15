@@ -8,10 +8,23 @@ A comprehensive financial management platform featuring AI-powered transaction c
 
 This repository contains a complete, step-by-step guide to building YAICO from scratch:
 
-- **[🚀 YAICO Vibe Workflow Guide](./YAICO_VIBE_WORKFLOW_GUIDE.md)** - Complete implementation roadmap (start here!)
+### Core Guides
+- **[🚀 YAICO Vibe Workflow Guide](./YAICO_VIBE_WORKFLOW_GUIDE.md)** - Complete 11-phase implementation roadmap (start here!)
 - **[📋 Project Context](./PROJECT_CONTEXT.md)** - Project overview and tech stack
+- **[🤖 CLAUDE.md](./CLAUDE.md)** - Auto-loaded context file for Claude Code sessions
+
+### Advanced Workflows
+- **[⚡ Claude Code Workflow](./docs/guides/CLAUDE_CODE_WORKFLOW.md)** - Advanced "Explore → Plan → Code → Commit" workflow
 - **[⚡ Quick Start Guide](./docs/guides/QUICK_START.md)** - Condensed reference for experienced developers
+- **[📝 Command Reference](./docs/guides/COMMAND_REFERENCE.md)** - Complete vibe command catalog
+- **[🔧 Troubleshooting Guide](./docs/guides/TROUBLESHOOTING.md)** - Common issues and solutions
+
+### Reference Documentation
 - **[🏗️ Architecture Overview](./docs/ARCHITECTURE.md)** - System architecture and design decisions
+- **[✅ Progress Checklist](./docs/PROGRESS_CHECKLIST.md)** - Detailed phase-by-phase tracker
+
+### Automation
+- **[⚙️ Custom Commands](./.claude/commands/)** - 7 slash commands for common tasks (test, review, optimize, etc.)
 
 ## ✨ Features
 
@@ -47,11 +60,14 @@ This repository contains a complete, step-by-step guide to building YAICO from s
 - Firebase (database & auth)
 - GitHub Actions (CI/CD)
 
-## 🎯 The Vibe Code Workflow
+## 🎯 Development Workflow
 
-This project is built using the **Vibe Code methodology** - a systematic, phase-based approach to building complete applications efficiently:
+This project uses two complementary workflows:
 
-### 11 Phases in ~7 Hours
+### 1. Vibe Code Workflow (Phase-Based Implementation)
+A systematic, 11-phase approach for building from scratch - perfect for greenfield projects.
+
+**Phases (~7 hours total):**
 1. Project Initialization (30 min)
 2. Authentication System (45 min)
 3. Data Layer & Types (40 min)
@@ -64,12 +80,27 @@ This project is built using the **Vibe Code methodology** - a systematic, phase-
 10. Mobile & Polish (20 min)
 11. Launch Checklist (15 min)
 
-**Key Principles:**
-- Context First (read PROJECT_CONTEXT.md before each phase)
-- Test Immediately (verify before moving forward)
-- Commit Frequently (after each successful phase)
-- Fix Fast (don't proceed with errors)
-- Progress > Perfection (ship incrementally)
+**Principles:** Context First → Test Immediately → Commit Frequently → Fix Fast → Progress > Perfection
+
+📖 **[Full Vibe Code Guide](./YAICO_VIBE_WORKFLOW_GUIDE.md)**
+
+### 2. Claude Code Workflow (Daily Development)
+The advanced "Explore → Plan → Code → Commit" workflow for ongoing development work.
+
+**Process:**
+1. **Explore** - Prime context with CLAUDE.md, use @ syntax to reference files
+2. **Plan** - Use Plan Mode for safe analysis and detailed planning
+3. **Code** - TDD approach, extended thinking for complex problems
+4. **Commit** - Automate with custom slash commands
+
+**Features:**
+- Auto-loaded context (CLAUDE.md)
+- Plan Mode for safe exploration
+- 7 custom slash commands (test, review, optimize, etc.)
+- Session resumption
+- Git worktrees for parallel work
+
+📖 **[Advanced Workflow Guide](./docs/guides/CLAUDE_CODE_WORKFLOW.md)** | **[Custom Commands](./.claude/commands/)**
 
 ## 🚀 Quick Start
 
@@ -78,14 +109,19 @@ This project is built using the **Vibe Code methodology** - a systematic, phase-
 # Check your environment
 node --version  # Should be 18+
 npm --version   # Should be 9+
-code --version  # VS Code with Claude extension
+claude --version  # Claude Code CLI
 ```
 
-### Getting Started
+### Two Ways to Start
+
+#### Option A: Build from Scratch (Vibe Code Workflow)
+
+Perfect for greenfield projects or learning the full stack.
 
 1. **Read the Context**
    ```bash
    cat PROJECT_CONTEXT.md
+   cat CLAUDE.md
    ```
 
 2. **Follow the Workflow**
@@ -93,6 +129,38 @@ code --version  # VS Code with Claude extension
 
 3. **Execute Phase by Phase**
    Each phase includes exact commands to copy and paste
+
+📖 **Guide:** [YAICO_VIBE_WORKFLOW_GUIDE.md](./YAICO_VIBE_WORKFLOW_GUIDE.md)
+
+#### Option B: Develop with Claude Code (Advanced Workflow)
+
+Perfect for ongoing development and feature additions.
+
+1. **Start Claude Code**
+   ```bash
+   claude
+   # CLAUDE.md is automatically loaded
+   ```
+
+2. **Use Plan Mode for New Features**
+   ```bash
+   claude --permission-mode plan
+   ```
+
+   Then prompt:
+   ```
+   "I need to add [feature]. Using @src/relevant/files.ts as
+   reference, create a detailed implementation plan."
+   ```
+
+3. **Use Custom Commands**
+   ```bash
+   /test src/lib/tax/vat-calculator.ts
+   /review src/server/actions/transaction.actions.ts
+   /optimize src/components/dashboard/TransactionList.tsx
+   ```
+
+📖 **Guide:** [Claude Code Workflow](./docs/guides/CLAUDE_CODE_WORKFLOW.md) | [Commands](./.claude/commands/)
 
 ## 📊 Project Status
 
@@ -106,29 +174,47 @@ This repository contains:
 ## 🎓 Learning Resources
 
 ### For Developers
-- **New to Next.js?** Start with the [Quick Start Guide](./docs/guides/QUICK_START.md)
-- **Want to understand the system?** Read the [Architecture Overview](./docs/ARCHITECTURE.md)
-- **Ready to build?** Follow the [Vibe Workflow Guide](./YAICO_VIBE_WORKFLOW_GUIDE.md)
+- **New to the project?** Read [CLAUDE.md](./CLAUDE.md) and [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md)
+- **Building from scratch?** Follow the [Vibe Workflow Guide](./YAICO_VIBE_WORKFLOW_GUIDE.md)
+- **Using Claude Code?** Master the [Advanced Workflow](./docs/guides/CLAUDE_CODE_WORKFLOW.md)
+- **Want quick reference?** Check the [Quick Start Guide](./docs/guides/QUICK_START.md)
+- **Understanding architecture?** Read the [Architecture Overview](./docs/ARCHITECTURE.md)
+- **Stuck on an issue?** Consult the [Troubleshooting Guide](./docs/guides/TROUBLESHOOTING.md)
 
 ### Key Concepts
-- **Vibe Code**: Efficient, context-driven development workflow
+- **Vibe Code Workflow**: Phase-based implementation for building from scratch (~7 hours)
+- **Claude Code Workflow**: "Explore → Plan → Code → Commit" for daily development
+- **CLAUDE.md**: Auto-loaded context file that guides every Claude Code session
+- **Custom Commands**: 7 slash commands for testing, review, optimization, and code generation
 - **Human-in-the-Loop AI**: AI suggestions with user review for <90% certainty
-- **Dutch DBA Rules**: Client concentration monitoring for freelancer compliance
-- **EU VAT Complexity**: Reverse charge, distance selling thresholds
+- **Dutch DBA Rules**: Client concentration monitoring for freelancer compliance (>70% = risk)
+- **EU VAT Complexity**: Reverse charge, distance selling thresholds, 21% standard rate
 
 ## 📁 Repository Structure
 
 ```
 bookish-broccoli/
-├── YAICO_VIBE_WORKFLOW_GUIDE.md  # Complete workflow guide (START HERE)
-├── PROJECT_CONTEXT.md             # Project overview
+├── YAICO_VIBE_WORKFLOW_GUIDE.md  # 11-phase implementation guide (START HERE)
+├── PROJECT_CONTEXT.md             # Project overview for humans
+├── CLAUDE.md                      # Auto-loaded context for Claude Code
 ├── README.md                      # This file
+├── .claude/
+│   └── commands/                  # Custom slash commands (7 commands)
+│       ├── test.md                # Run and fix tests
+│       ├── review.md              # Code review
+│       ├── optimize.md            # Performance optimization
+│       ├── add-test.md            # Generate tests
+│       ├── fix-types.md           # Fix TypeScript errors
+│       ├── add-gateway.md         # Create API gateway
+│       └── add-component.md       # Create UI component
 └── docs/
     ├── ARCHITECTURE.md            # System architecture
-    ├── guides/
-    │   └── QUICK_START.md         # Quick reference
-    ├── testing/                   # Testing documentation
-    └── deployment/                # Deployment guides
+    ├── PROGRESS_CHECKLIST.md      # Detailed phase tracker
+    └── guides/
+        ├── CLAUDE_CODE_WORKFLOW.md # Advanced workflow (Explore→Plan→Code→Commit)
+        ├── QUICK_START.md          # Quick reference
+        ├── COMMAND_REFERENCE.md    # Complete command catalog
+        └── TROUBLESHOOTING.md      # Common issues & solutions
 ```
 
 ## 🤝 Contributing
